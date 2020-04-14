@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Secure App</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styling.css') }}">
+</head>
+
+<body>
+        <div class="navbar">
+                {% if current_user %}
+                <a>User: {{current_user}}</a>
+                {% else %}
+                <a>Not logged in</a>
+                {% endif %}
+        </div>
+        <div class="index-page">
+                <div class="form">
+                        <form action="/messages" method="GET">
+                                <button> Message boards </button>
+                        </form>
+                        <br>
+                        {% if current_user %}
+                        <form action="/newboard" method="GET">
+                                <button> New board </button>
+                        </form>
+                        <br>
+                        {% endif %}
+                        <form action="/logout" method="GET">
+                                <button> Logout </button>
+                        </form>
+                </div>
+        </div>
+</body>
+
+</html>

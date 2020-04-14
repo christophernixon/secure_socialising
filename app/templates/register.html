@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styling.css') }}">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form"  action="/register" method="post">
+                {% if existing_user %}
+                <p class="error"> User already exists. </p>
+                {% endif %}
+                <input type="text" name="username" placeholder="username" />
+                <input type="password" name="password" placeholder="password" />
+                <input type="text" name="email" placeholder="email address" />
+                <button>create</button>
+                <p class="message">Already registered? <a href="/login">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Message board</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styling.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/homepage">Home</a>
+        {% if current_user %}
+        <a>User: {{current_user}}</a>
+        {% else %}
+        <a>Not logged in</a>
+        {% endif %}
+    </div>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" action="/newboard" method="post">
+                <input type="text" name="board_name" placeholder="Board Name" />
+                <input type="text" name="board_topic" placeholder="Topic" />
+                <button type="submit"> Create Board</button>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="message-page">
+        <div class="message-board">
+            <div class="message">
+                All messages
+            </div>
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+        </div>
+    </div> -->
+</body>
+
+</html>
