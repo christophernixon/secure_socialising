@@ -38,7 +38,7 @@ py-bcrypt==0.4
 pycparser==2.14
 pydocstyle==5.0.2
 Pygments==2.5.2
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyOpenSSL==19.1.0
 pytest==3.0.1
 pytest-cov==2.3.1
